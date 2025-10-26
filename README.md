@@ -102,4 +102,14 @@ python plot_results.py
 - **BOA original:** Convergencia rápida pero tendencia al estancamiento en óptimos locales.  
 - **AE-BOA:** Búsqueda más diversa, oscilación controlada del fitness y mejora en la exploración globa
 
+---
 
+## 🧾 Créditos y atribución
+
+Este repositorio reproduce y amplía los experimentos descritos en el artículo:
+
+> **Fabián Alexis Vidal Torres**  
+> *Implementación del Algoritmo Bioinspirado Bobcat para un Problema de Optimización en un contexto de Asignación de Hubs*  
+> Escuela de Ingeniería Informática, Universidad de Valparaíso, Chile.
+
+La reproducción fue realizada con fines educativos y de análisis comparativo, respetando la autoría intelectual del trabajo original.
