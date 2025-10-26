@@ -45,3 +45,61 @@ pip install -r requirements.txt
 
 > Todas las versiones exactas están listadas en `requirements.txt`.
 
+## 🚀 Cómo ejecutar los experimentos
+
+Cada conjunto de pruebas corresponde a una instancia de diferente complejidad:
+
+| Script | Descripción | Parámetros principales |
+|--------|--------------|------------------------|
+| `run_simple.py` | Instancia simple (10 partículas, 100 iteraciones) | Rápida convergencia inicial |
+| `run_medium.py` | Instancia media (15 partículas, 500 iteraciones) | Mayor estabilidad |
+| `run_hard.py` | Instancia dura (20 partículas, 1000 iteraciones) | Evaluación más exigente |
+| `run_variant.py` | Variante AE-BOA (20 partículas, 1000 iteraciones) | Exploración adaptativa |
+
+### 🧠 Ejemplo de ejecución
+
+```bash
+python run_hard.py
+```
+Los resultados se almacenan automáticamente en la carpeta `results/`, incluyendo los archivos `.csv` con estadísticas y las figuras generadas.
+
+## 📊 Cómo generar las figuras del reporte
+
+Una vez finalizada la ejecución de un script, las figuras se crean de forma automática y se guardan en el subdirectorio correspondiente dentro de `results/`:
+
+| Figura | Descripción | Archivo generado |
+|---------|--------------|------------------|
+| Boxplot | Distribución del mejor fitness en múltiples ejecuciones | `Boxplot_simple.png`, `Boxplot_media.png`, `Boxplot_dura.png` |
+| Convergencia | Evolución del mejor fitness por iteración | `Convergencia_simple.png`, `Convergencia_media.png`, `Convergencia_dura.png` |
+| QMetric | Evaluación de calidad por iteración | `QMetric_simple.png`, `QMetric_media.png`, `QMetric_dura.png` |
+
+### 🧩 Regenerar figuras manualmente
+
+Si deseas regenerar las figuras de forma manual, ejecuta:
+
+```bash
+python plot_results.py
+```
+
+## 📂 Descripción de los archivos principales
+
+| Archivo / Carpeta | Contenido |
+|--------------------|-----------|
+| `run_simple.py` | Ejecución del BOA en instancia simple |
+| `run_medium.py` | Ejecución del BOA en instancia media |
+| `run_hard.py` | Ejecución del BOA en instancia dura |
+| `run_variant.py` | Ejecución de la variante AE-BOA |
+| `boa_core.py` | Implementación del algoritmo base del Bobcat Optimization Algorithm |
+| `variant_module.py` | Módulos adicionales (mutación adaptativa, factor α(t)) |
+| `results/` | Carpeta con resultados estadísticos y figuras |
+| `requirements.txt` | Lista completa de dependencias y versiones |
+| `README.md` | Descripción general del proyecto |
+
+---
+
+## 📈 Resultados esperados
+
+- **BOA original:** Convergencia rápida pero tendencia al estancamiento en óptimos locales.  
+- **AE-BOA:** Búsqueda más diversa, oscilación controlada del fitness y mejora en la exploración globa
+
+
